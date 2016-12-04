@@ -31,7 +31,7 @@ VM_REFERENCE = {                        #image type to use
         'version': 'latest'
     }
 
-def run_example():
+def run_main():
     
     subscription_id = os.environ.get(
         AZURE_SUBSCRIPTION_ID,
@@ -163,5 +163,5 @@ def create_vm_parameters(nic_id, vm_reference):
 
 
 if __name__ == "__main__":
-    run_example()
+    run_main()
 
