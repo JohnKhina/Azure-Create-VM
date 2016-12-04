@@ -12,21 +12,19 @@ AZURE_TENANT_ID = '11111-1111-1111-1111-111111111111'
 AZURE_CLIENT_ID = '11111111-1111-1111-1111-111111111111'
 AZURE_CLIENT_SECRET = '1111111122222222333333334444444455555'
 AZURE_SUBSCRIPTION_ID = '1111111122222222333333334444444455'
-# Resource 
-GROUP_NAME = 'dev-aue-rg'
-#Network
-VNET_NAME = 'dev-aue-vnet'
-SUBNET_NAME = 'dev-aue-subnet'
-# VM
-OS_DISK_NAME = 'devapp01-osdisk'
-STORAGE_ACCOUNT_NAME = 'appdevstorage'
-IP_CONFIG_NAME = 'devapp01-ip-config'
-NIC_NAME = 'devapp01-nic'
-USERNAME = 'devlogin'
-PASSWORD = 'creative99Secret#@!'
-VM_NAME = 'devapp01'
 
-VM_REFERENCE = {
+GROUP_NAME = 'dev-aue-rg'               #resource group name
+VNET_NAME = 'dev-aue-vnet'              #VNET name
+SUBNET_NAME = 'dev-aue-subnet'          #subnet name
+OS_DISK_NAME = 'devapp01-osdisk'        #VM disk name
+STORAGE_ACCOUNT_NAME = 'appdevstorage'  #Storage account name
+IP_CONFIG_NAME = 'devapp01-ip-config' 
+NIC_NAME = 'devapp01-nic'               #network interface name
+USERNAME = 'devlogin'                   #login username
+PASSWORD = 'creative99Secret#@!'        #login password
+VM_NAME = 'devapp01'                    #vm name
+
+VM_REFERENCE = {                        #image type to use
         'publisher': 'RedHat',
         'offer': 'RHEL',
         'sku': '7.3',
@@ -34,10 +32,7 @@ VM_REFERENCE = {
     }
 
 def run_example():
-    """Resource Group management example."""
-    #
-    # Create all clients with an Application (service principal) token provider
-    #
+    
     subscription_id = os.environ.get(
         AZURE_SUBSCRIPTION_ID,
         '1111111122222222333333334444444455') # your Azure Subscription Id
